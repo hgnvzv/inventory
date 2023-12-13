@@ -1,0 +1,43 @@
+<div class="container">
+    <h1 class="text-center mt-s text-light"> الاشكال الدوائية</h1>
+
+    <div class="row mt-5">
+        <div class="col-3">
+
+            <input [(ngModel)]="hero.name" type="text" class="form-control m-1" placeholder="أسم الدواء">
+
+        </div>
+        <div class="col-3">
+
+            <input [(ngModel)]="hero.power" type="text" class="form-control m-1" placeholder="السعر">
+
+        </div>
+        <div class="col-3">
+
+            <input [(ngModel)]="hero.Image" type="text" class="form-control m-1" placeholder="رابط صورة الدواء">
+
+        </div>
+        <div class="col-3">
+
+           <button (click)="ajout()" class="btn form-control m-1 text-light">أنشاء</button>
+
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-3" *ngFor="let item of heros">
+            <div [ngClass]="{'card p-1': true , 'hight':item.power>100, 'medium':item.power < 100 && item.power>50,'low':item.power <50}">
+                <div class="card-image">
+                    <img class="w-100" [src]="item.Image" alt="">
+                </div>
+                <div class="card-bodt">
+                    <h2> {{item.name}}</h2>
+                    <p> {{item.power}}</p>
+                </div>
+
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
